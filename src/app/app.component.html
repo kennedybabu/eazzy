@@ -1,10 +1,19 @@
-<mat-drawer-container class="wrapper">
-  <mat-drawer mode="over" opened style="width:350px;">
+<div *ngIf="loaderService.isLoading | async" class="progress-bar-wrapper" style="position: fixed;top: 0;width: 100vw;z-index: 200;">
+  <mat-progress-bar mode="indeterminate" ></mat-progress-bar>
+</div>
+<mat-drawer-container style="position: relative;" class="wrapper">
+  <mat-drawer mode="over" style="width:350px;">
       <mat-nav-list>
 
       </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content class="p-4">
-      
+    <div class="container">      
+        <router-outlet></router-outlet>
+    </div>
   </mat-drawer-content>
+  
 </mat-drawer-container>
+<!-- <div *ngIf="loaderService.isLoading | async" class="spinner">
+  <mat-spinner style="top:50%; left: 50%;"></mat-spinner>
+</div> -->

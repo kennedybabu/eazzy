@@ -1,1 +1,24 @@
-<p>login works!</p>
+<div class="row main-wrapper">
+    <div class="wrapper" style="padding-top: 10rem;">
+        <h4 style="font-size: 1.5rem;font-weight: 600;line-height: 1.3;" class="text-center">Sign In <br>To Your Account</h4> 
+        <div class="row" style="padding-top: 2rem;color: #5c727d;" >
+            <div class="col-5">
+                <form (submit)="onSubmit()" [formGroup]="loginForm">
+                    <div class="form-floating mb-3">
+                      <input type="email" style="height: 30px;" formControlName="username" class="form-control" placeholder="username">
+                      <label for="floatingInput">Email address</label> 
+                      <small style="color: rgb(248, 64, 64);" *ngIf="username?.invalid && username?.touched">provide a username</small>
+                    </div>
+                    <div class="form-floating">
+                      <input type="password" formControlName="password" class="form-control" placeholder="Password">
+                      <label for="floatingPassword">Password</label>
+                      <small style="color: rgb(248, 64, 64);" *ngIf="password?.invalid && password?.touched">enter password</small>                    </div>
+                    <button [disabled]="loginForm.invalid" class="my-3 p-3">SIGN IN</button>
+                  </form>
+                  <small style="cursor: pointer;">Forgot password?</small>
+            </div>
+            <div class="col-5">
+            </div>
+        </div>
+    </div>
+</div>

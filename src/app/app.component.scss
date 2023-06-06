@@ -1,3 +1,18 @@
 .wrapper {
-    height: 100vh;
+    height: 100vh; 
+    position: relative;
+
+
+    .spinner {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.555); 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
 }

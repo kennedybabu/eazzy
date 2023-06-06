@@ -10,11 +10,19 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './pages/login/login.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { InterceptorService } from './services/interceptor.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +32,16 @@ import { LoginComponent } from './pages/login/login.component';
     MatFormFieldModule,
     MatSelectModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
