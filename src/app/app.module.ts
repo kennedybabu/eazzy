@@ -33,6 +33,13 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { StandingOrdersComponent } from './components/standing-orders/standing-orders.component';
 import { UnpaidInvoicesComponent } from './components/unpaid-invoices/unpaid-invoices.component';
 import { LoanDisbursementsComponent } from './components/loan-disbursements/loan-disbursements.component';
+import { LoanTransactionsComponent } from './components/loan-transactions/loan-transactions.component';
+import { LoanStatusComponent } from './components/loan-status/loan-status.component';
+import { OutstandingLoansComponent } from './components/outstanding-loans/outstanding-loans.component';
+import { RemittanceDisbursementComponent } from './components/remittance-disbursement/remittance-disbursement.component';
+import { RemittanceBadDebtsComponent } from './components/remittance-bad-debts/remittance-bad-debts.component';
+import { RemittanceAnalysisComponent } from './components/remittance-analysis/remittance-analysis.component';
+import { CollectionRemittanceAnalysisComponent } from './components/collection-remittance-analysis/collection-remittance-analysis.component';
 
 
 @NgModule({
@@ -50,7 +57,14 @@ import { LoanDisbursementsComponent } from './components/loan-disbursements/loan
     GeneratedInvoicesComponent,
     StandingOrdersComponent,
     UnpaidInvoicesComponent,
-    LoanDisbursementsComponent
+    LoanDisbursementsComponent,
+    LoanTransactionsComponent,
+    LoanStatusComponent,
+    OutstandingLoansComponent,
+    RemittanceDisbursementComponent,
+    RemittanceBadDebtsComponent,
+    RemittanceAnalysisComponent,
+    CollectionRemittanceAnalysisComponent
   ],
   imports: [
     BrowserModule,
