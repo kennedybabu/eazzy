@@ -1,0 +1,45 @@
+.row {
+    padding-top: 5rem;
+
+    .wrapper {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+        .tile {
+            width: 25%;
+            height: 140px;
+            display: flex;
+            cursor: pointer;
+
+
+            .icon-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100%;
+                padding: 1rem;
+            }
+
+            div {
+                display: flex;
+                align-items: start;
+                justify-content: center;
+                flex-direction: column;
+
+
+                p {
+                    color: black;
+                }
+
+
+                small {
+                    color: #5c727d;
+                }
+                
+            }
+        }
+    }
+}

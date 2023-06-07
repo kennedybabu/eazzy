@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-10">
+        <mat-tab-group class="mx-auto" mat-stretch-tabs="false" mat-align-tabs="start">
+            <mat-tab label="Landlords">
+                <div class="row">
+                    <div class="col" style="width: 150px;">
+                        <ul>
+                            <li (click)="openDialog()">Create a landlord</li>
+                            <li (click)="openCreateEstDialog()">Create an Estate</li>
+                            <li (click)="openUnpaidVouch()">Unpaid Vouchers</li>
+                            <li (click)="openSendBulkSMSDialog()">Send Bulk SMS</li>
+                            <li (click)="importLandlords()">Import Landlords</li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <ul>
+                            <li (click)="landslordsList()">List of Landlords</li>
+                            <li (click)="generatedInvoices()">Invoices Generated</li>
+                            <li (click)="standingOrdersDialog()">Standing Orders</li>
+                            <li (click)="unpaidInvoicesDialog()">Unpaid Invoices</li>
+                            <li (click)="loanDisbursementsDiaolog()">Loan Disbursement</li>
+                            <li>Loan Transactions</li> 
+                            <li>Loan Status</li>
+                            <li>Oustanding Loans</li> 
+                            <li>Unpaid Vouchers</li>
+                            <li>Remittance Disbursement</li> 
+                            <li>Remittance Analysis</li>
+                            <li>Remittance Bad Debts</li> 
+                            <li>Collections & Remittances Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Properties">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </mat-tab>
+            <mat-tab label="Residents">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum placeat minima qui!</p>
+            </mat-tab>
+            <mat-tab label="Accounts">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, architecto.</p>
+            </mat-tab>
+            <mat-tab label="System">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

@@ -1,0 +1,215 @@
+<div class="row mx-auto">
+    <div>
+        <mat-stepper>
+            <mat-step>
+                <ng-template matStepLabel>Landlord Details</ng-template>
+                <div class="pt-2">
+                    <mat-form-field>
+                        <mat-label>Choose an option</mat-label>
+                        <mat-select>
+                          <mat-option value="option1">Option 1</mat-option>
+                          <mat-option value="option2">Option 2</mat-option>
+                          <mat-option value="option3">Option 3</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+              
+                <div class="row">
+                    <div class="col">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" id="firstName" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for="middleName" class="form-label">Middle Name</label>
+                        <input type="text" id="middleName" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" id="lastName" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="">ID/DPP</label>
+                    <input type="text" id="idDpp" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">PIN Number</label>
+                    <input type="text" id="pin" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">VAT</label>
+                    <input type="text" id="vat" class="form-control">
+                </div>     
+                
+                <div class="my-1">
+                    <div class="row">
+                        <small>Only fill if the landlord is a company/joint account</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Company Name</label>
+                        <input type="text" id="companyName" class="form-control">
+                    </div> 
+
+                    <div class="form-group">
+                        <label for="">Registration Number</label>
+                        <input type="text" id="regNo" class="form-control">
+                    </div> 
+                </div>
+
+                <div class="form-group">
+                    <label>Is seperate Company/Entity?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="yesCheckbox">
+                        <label class="form-check-label" for="yesCheckbox">Yes</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="noCheckbox">
+                        <label class="form-check-label" for="noCheckbox">No</label>
+                      </div>
+                      <small>Applicable when tenants pay directly to the landlord. This will track the the landlords transactions seperate from your companys transactions</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Use Landlord Details in Letterhead?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="yesCheckbox">
+                        <label class="form-check-label" for="yesCheckbox">Yes</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="noCheckbox">
+                        <label class="form-check-label" for="noCheckbox">No</label>
+                      </div>
+                      <small>Choose whether to show landlords phone number, email and other details in letterhead or show your companys letterhead</small>
+                </div>
+                <div class="my-2">
+                    <button class="next" mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Contacts</ng-template>
+                <div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="primaryMobile" class="form-label">Primary Number</label>
+                            <input type="text" id="middleName" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="lastName" class="form-label">Alternate</label>
+                            <input type="text" id="alternate" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="poBox" class="form-label">P.O BOX</label>
+                            <input type="text" id="poBox" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="lastName" class="form-label">Alternate</label>
+                            <input type="text" id="alternate" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="town" class="form-label">Town, County</label>
+                            <input type="text" id="alternate" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Physical Address</label> 
+                        <input type="text" id="address" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label> 
+                        <input type="email" id="email" class="form-control">
+                    </div>
+                </div>
+                <div class="my-2">
+                  <button class="prev" mat-button matStepperPrevious>Back</button>
+                  <button class="next" mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Nominated Signatories</ng-template> 
+              <div>
+                <mat-form-field>
+                    <mat-label>Choose an option</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <label>Name</label> 
+                <input type="text" id="name" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>ID/DPP</label> 
+                <input type="text" id="idDpp" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label> 
+                <input type="text" id="phoneNo" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Designation</label> 
+                <input type="text" id="designation" class="form-control">
+              </div>
+              <div class="my-2">
+                <button class='prev' mat-button matStepperPrevious>Back</button>
+                <button class="next" mat-button matStepperNext>Next</button>
+              </div>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Next of Kin</ng-template>
+                <div>
+                    <mat-form-field>
+                        <mat-label>Choose an option</mat-label>
+                        <mat-select>
+                          <mat-option value="option1">Option 1</mat-option>
+                          <mat-option value="option2">Option 2</mat-option>
+                          <mat-option value="option3">Option 3</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="form-group">
+                    <label>Name</label> 
+                    <input type="text" id="name" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label>ID/DPP</label> 
+                    <input type="text" id="idDpp" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label>Phone Number</label> 
+                    <input type="text" id="phoneNo" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label>Designation</label> 
+                    <input type="text" id="designation" class="form-control">
+                  </div>
+                <div class="my-2">
+                  <button class="prev" mat-button matStepperPrevious>Back</button>
+                  <button class="next" mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Documents</ng-template> 
+                <div class="form-group">
+                    <small>Photos, Signatures and Scanned Identity Documents *must be of image type</small>
+                    <label for="">Drop Files to upload</label>
+                    <input type="file" class="form-control">
+                </div>
+                <div class="my-2">
+                  <button class="prev" mat-button matStepperPrevious>Back</button>
+                  <button class="next" mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+          </mat-stepper>
+    </div>
+</div>

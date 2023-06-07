@@ -1,0 +1,17 @@
+.row {
+
+    mat-tab-group {
+        overflow: hidden;
+
+
+        padding-top: 2rem;
+        
+        ul {
+            margin-top: 5rem;       
+            
+            li {
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -16,13 +16,41 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { InterceptorService } from './services/interceptor.service';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { HomeComponent } from './pages/home/home.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { CreateLandlordComponent } from './components/create-landlord/create-landlord.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { CreateEstateComponent } from './components/create-estate/create-estate.component';
+import { UnpaidVouchersComponent } from './components/unpaid-vouchers/unpaid-vouchers.component';
+import { SendBulkSmsComponent } from './components/send-bulk-sms/send-bulk-sms.component';
+import { ImportLandlordsComponent } from './components/import-landlords/import-landlords.component';
+import { LandlordsListComponent } from './components/landlords-list/landlords-list.component';
+import { GeneratedInvoicesComponent } from './components/generated-invoices/generated-invoices.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { StandingOrdersComponent } from './components/standing-orders/standing-orders.component';
+import { UnpaidInvoicesComponent } from './components/unpaid-invoices/unpaid-invoices.component';
+import { LoanDisbursementsComponent } from './components/loan-disbursements/loan-disbursements.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    HomeComponent,
+    CreateLandlordComponent,
+    CreateEstateComponent,
+    UnpaidVouchersComponent,
+    SendBulkSmsComponent,
+    ImportLandlordsComponent,
+    LandlordsListComponent,
+    GeneratedInvoicesComponent,
+    StandingOrdersComponent,
+    UnpaidInvoicesComponent,
+    LoanDisbursementsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +65,13 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     FormsModule,
     HttpClientModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTabsModule,
+    MatDialogModule,
+    MatStepperModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}
