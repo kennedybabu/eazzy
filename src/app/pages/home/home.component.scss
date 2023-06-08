@@ -1,4 +1,8 @@
 .row {
+    .mat-mdc-tab-body-content {
+        overflow-x: hidden !important;
+    }
+
 
     mat-tab-group {
         overflow: hidden;
@@ -6,11 +10,12 @@
 
         padding-top: 2rem;
         
-        ul {
+        ul, ol {
             margin-top: 5rem;       
             
             li {
                 cursor: pointer;
+                margin: .5rem 0;
             }
         }
     }

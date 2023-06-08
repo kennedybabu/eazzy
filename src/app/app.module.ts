@@ -40,6 +40,9 @@ import { RemittanceDisbursementComponent } from './components/remittance-disburs
 import { RemittanceBadDebtsComponent } from './components/remittance-bad-debts/remittance-bad-debts.component';
 import { RemittanceAnalysisComponent } from './components/remittance-analysis/remittance-analysis.component';
 import { CollectionRemittanceAnalysisComponent } from './components/collection-remittance-analysis/collection-remittance-analysis.component';
+import { LandlordsComponent } from './pages/landlords/landlords.component';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -64,7 +67,8 @@ import { CollectionRemittanceAnalysisComponent } from './components/collection-r
     RemittanceDisbursementComponent,
     RemittanceBadDebtsComponent,
     RemittanceAnalysisComponent,
-    CollectionRemittanceAnalysisComponent
+    CollectionRemittanceAnalysisComponent,
+    LandlordsComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +89,10 @@ import { CollectionRemittanceAnalysisComponent } from './components/collection-r
     MatStepperModule,
     MatExpansionModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatTableModule
+    
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}

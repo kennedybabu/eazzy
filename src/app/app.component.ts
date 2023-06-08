@@ -9,5 +9,11 @@ import { LoaderService } from './services/loader.service';
 export class AppComponent  {
   title = 'rent';
 
-  constructor(public loaderService: LoaderService) {}
+  constructor(public loaderService: LoaderService) {} 
+
+  isOpen: boolean = true 
+
+  toggleSidenav(){
+    this.isOpen = !this.isOpen
+  }
 }
