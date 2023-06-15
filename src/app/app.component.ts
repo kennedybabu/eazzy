@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoaderService } from './services/loader.service';
+import { SharedService } from './services/shared.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,24 @@ import { LoaderService } from './services/loader.service';
 })
 export class AppComponent  {
   title = 'rent';
+  successMessage!: string 
+  errorMessage!: string 
 
-  constructor(public loaderService: LoaderService) {} 
 
-  isOpen: boolean = true 
+
+  constructor(public loaderService: LoaderService,     
+    private sharedService: SharedService
+    ) {
+      this.sharedService.getErrorMessage().subscribe((res) => {
+        this.errorMessage = res
+      })
+
+      this.sharedService.getSuccessMessage().subscribe((res) => {
+        this.successMessage = res
+      })
+     } 
+
+  isOpen: boolean = false 
 
   toggleSidenav(){
     this.isOpen = !this.isOpen

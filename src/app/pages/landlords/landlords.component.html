@@ -1,4 +1,7 @@
 <div class="row wrapper">
+  <div class="row my-3">
+    <button (click)="openDialog()" class="btn btn-primary" style="width: max-content;border-radius: 0;">add landlord</button>
+  </div>
    <div class="row">
     <div class="col-lg-7">
         <div class="row gap-2 d-flex justify-content-between">
@@ -7,34 +10,41 @@
                     <p style="font-weight: bold;">Total Users</p>
                 </div>
                 <div class="row">
-                    <h1 style="font-weight: bold;">980</h1> 
+                    <h1 style="font-weight: bold;">364</h1> 
                     <small style="color: rgb(106, 170, 11);">+0.892%</small>
                 </div>
             </div>
 
             <div class="tile shadow-sm py-2 px-3 ">
                 <div class="row">
-                    <p style="font-weight: bold;">Total Users</p>
+                    <p style="font-weight: bold;">Total Properties</p>
                 </div>
                 <div class="row">
                     <h1 style="font-weight: bold;">980</h1> 
-                    <small style="color: rgb(106, 170, 11);">+0.892%</small>
+                    <small style="color: rgb(106, 170, 11);">+1.42%</small>
                 </div>
             </div>
 
             <div class="tile shadow-sm py-2 px-3 ">
                 <div class="row">
-                    <p style="font-weight: bold;">Total Users</p>
+                    <p style="font-weight: bold;">Generated Revenue</p>
                 </div>
                 <div class="row">
-                    <h1 style="font-weight: bold;">980</h1> 
-                    <small style="color: rgb(106, 170, 11);">+0.892%</small>
+                    <h1 style="font-weight: bold;">56m</h1> 
+                    <small style="color: rgb(170, 43, 11);">-0.192%</small>
                 </div>
             </div>
         </div>
-        <div class="row my-3">
-            <div class="graph" style="width: 100%;height: 350px;background-color: tomato;">
-
+        <div class="row my-3 p-2">
+            <div class="graph shadow-sm" style="width: 100%;height: 350px;">
+                <div style="text-align: center;">
+                    <apx-chart
+                    [series]="chartOptions.series"
+                    [chart]="chartOptions.chart"
+                    [xaxis]="chartOptions.xaxis"
+                    [title]="chartOptions.title"
+                  ></apx-chart>
+                </div>
             </div>
         </div>
     </div>
@@ -46,10 +56,11 @@
     </div>
    </div>
    <div class="row rounded p-3">
-    <!-- <mat-form-field >
+    <h3 style="font-size: large;font-weight: 600;">Landlords</h3>
+    <mat-form-field >
         <mat-label>Filter</mat-label>
         <input matInput  (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-    </mat-form-field> -->
+    </mat-form-field>
       
       <div class="mat-elevation-z8">
         <table mat-table matSort [dataSource]="dataSource">
@@ -76,6 +87,11 @@
           <ng-container matColumnDef="fruit">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Fruit </th>
             <td mat-cell *matCellDef="let row"> {{row.fruit}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+            <td mat-cell (click)="assignStaff(row)" *matCellDef="let row" style="cursor: pointer;">Action</td>
           </ng-container>
       
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

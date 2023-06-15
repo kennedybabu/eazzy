@@ -4,26 +4,13 @@
 <mat-drawer-container style="position: relative;" class="wrapper">
   <mat-drawer mode="over" [opened]="isOpen" style="width:350px;padding-top: 3rem;">
     <p (click)="toggleSidenav()" style="font-weight: 600;font-size: 1.5rem;position: absolute;top: 2rem;right:2rem;cursor: pointer;"><i class="bi bi-x-lg"></i></p>
-      <h2 class="m-3" style="cursor: pointer;">eazzyrent</h2>
+      <h2 class="m-3" routerLink="/" style="cursor: pointer;">eazzyrent</h2>
       <mat-nav-list>
         <mat-list-item routerLink="landlords"><i class="bi bi-people-fill mx-1"></i>Landlords</mat-list-item>
         <mat-list-item><i class="bi bi-houses-fill mx-1"></i>Properties</mat-list-item>
         <mat-list-item><i class="bi bi-person-vcard mx-1"></i>Residents</mat-list-item>
         <mat-list-item><i class="bi bi-person-lines-fill mx-1"></i>Accounts</mat-list-item>
         <mat-list-item><i class="bi bi-gear-fill mx-1"></i>System</mat-list-item>
-
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Landlords
-            </mat-panel-title>
-            <mat-panel-description>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <ul style="list-style: none;">
-            <p>home</p>
-          </ul>
-        </mat-expansion-panel>
       </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content class="p-4">
@@ -34,6 +21,21 @@
   </mat-drawer-content>
   
 </mat-drawer-container>
-<!-- <div *ngIf="loaderService.isLoading | async" class="spinner">
-  <mat-spinner style="top:50%; left: 50%;"></mat-spinner>
-</div> -->
+<div id="error" class="shadow p-3 d-flex error">
+  <div>
+    <i style="color: rgb(248, 61, 61);" class="bi bi-exclamation-triangle"></i>
+  </div>
+  <div class="mx-1">
+    <small>{{errorMessage}}</small>
+  </div>
+</div>
+
+<div *ngIf="successMessage" id="error" class="shadow p-3 d-flex success">
+  <div>
+    <i style="color: rgb(94, 155, 3);font-size: larger;" class="bi bi-check2"></i>
+  </div>
+  <div class="mx-1">
+    <small>{{errorMessage}}</small>
+  </div>
+</div>
+

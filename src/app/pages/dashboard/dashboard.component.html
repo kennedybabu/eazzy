@@ -52,11 +52,39 @@
         </div>
     </div>
     <div class="row gap-5 justify-between">
-        <div class="col-md-5">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur non maiores harum soluta aspernatur quo excepturi accusamus blanditiis quis! Quae eaque hic repellendus enim similique voluptates explicabo ullam iste placeat sequi vero laboriosam, delectus officiis? Impedit molestias aspernatur qui, deleniti quam eius tempora voluptate, laborum, dolorem sequi quae placeat amet.</p>
+        <div class="col-lg-5 shadow">
+            <div id="chart">
+                <apx-chart
+                  [series]="chartOptions.series"
+                  [chart]="chartOptions.chart"
+                  [dataLabels]="chartOptions.dataLabels"
+                  [plotOptions]="chartOptions.plotOptions"
+                  [yaxis]="chartOptions.yaxis"
+                  [xaxis]="chartOptions.xaxis"
+                ></apx-chart>
+              </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-lg-6">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum necessitatibus asperiores doloremque in molestiae culpa.</p>
+        </div>
+    </div>
+
+    <div class="row gap-5 justify-between">
+        <div class="col-lg-5">
+         
+        </div>
+        <div class="col-lg-6 shadow">
+            <div id="lineChart">
+                <apx-chart
+                  [series]="lineChartOptions.series"
+                  [chart]="lineChartOptions.chart"
+                  [xaxis]="lineChartOptions.xaxis"
+                  [dataLabels]="lineChartOptions.dataLabels"
+                  [grid]="lineChartOptions.grid"
+                  [stroke]="lineChartOptions.stroke"
+                  [title]="lineChartOptions.title"
+                ></apx-chart>
+              </div>
         </div>
     </div>
 </div>

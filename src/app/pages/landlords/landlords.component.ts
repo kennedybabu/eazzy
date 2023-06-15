@@ -2,6 +2,17 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import {
+  ChartComponent,
+  ApexAxisChartSeries,
+  ApexChart,
+  ApexXAxis,
+  ApexTitleSubtitle
+} from "ng-apexcharts"; 
+import { MatDialog } from '@angular/material/dialog';
+import { CreateLandlordComponent } from 'src/app/components/create-landlord/create-landlord.component';
+
+
 
 @Component({
   selector: 'app-landlords',
@@ -10,14 +21,35 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 })
 
 export class LandlordsComponent implements AfterViewInit, OnInit { 
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
+  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit', 'action'];
   dataSource= new  MatTableDataSource<UserData>();
 
 
+  @ViewChild("chart") chart!: ChartComponent;
+  public chartOptions!: ChartOptions;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(){}
+  constructor(private dialog: MatDialog){
+    this.chartOptions = {
+      series: [
+        {
+          name: "new landlords",
+          data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+        }
+      ],
+      chart: {
+        height: 350,
+        type: "bar"
+      },
+      title: {
+        text: "total landlords"
+      },
+      xaxis: {
+        categories: ["Jan", "Feb",  "Mar",  "Apr",  "May",  "Jun",  "Jul",  "Aug", "Sep"]
+      }
+    };
+  }
 
 
   ngAfterViewInit(): void {
@@ -27,7 +59,17 @@ export class LandlordsComponent implements AfterViewInit, OnInit {
 
 
   ngOnInit(): void {
-    this.dataSource.data = this.generateDummyData()
+    this.dataSource.data = this.generateDummyData() 
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(CreateLandlordComponent, {
+      minHeight: 'auto', width: '80%'
+    }) 
+
+    dialogRef.afterClosed().subscribe(result => {
+
+    }) 
   }
 
   applyFilter(event: Event) {
@@ -54,9 +96,19 @@ export class LandlordsComponent implements AfterViewInit, OnInit {
     return data;
   }
 
+
+  assignStaff(row: any){
+    console.log(row, 'clicked')
+  }
+
 }
 
-
+export type ChartOptions = {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  xaxis: ApexXAxis;
+  title: ApexTitleSubtitle;
+};
 
 
 export interface UserData {

@@ -6,9 +6,7 @@ html, body { height: 100%; }
 body {
     margin: 0; 
     font-family: 'Montserrat', sans-serif!important; 
-    background-color: #f0f1f7!important;
-
-
+    background-color: #EEEEEE!important;
 
     .mat-dialog-container {
         display: flex;
@@ -21,14 +19,48 @@ body {
     }
 
     .next {
-        background-color: #3f51b5;
-        color: aliceblue;
+        background-color: #0d6efd;
+        color: aliceblue!important;
+        border-radius: 0;
     }
 
     .prev {
-        background-color: #ef476f;
+        background-color: #5e9eff;
         color: black;
         margin-right: 1rem;
+        border-radius: 0;
+    }
+
+
+    #error {
+        position: absolute;
+        top: 2rem;
+        width: 300px;
+        height: 80px;
+        left: 2rem;
+        z-index: 30000000;
+        background-color: #ffffff;
+        animation: easeAlert .7s;
+    }
+    
+    
+    .success {
+        border-left: 15px solid rgb(94, 155, 3);
+    }
+
+    .error {
+        border-left: 15px solid rgb(253, 75, 75);
+    }
+
+
+    @keyframes easeAlert {
+        0% {
+            left: 100px;
+        }
+
+        100% {
+            left: 2rem;
+        }
     }
 
 }

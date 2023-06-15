@@ -43,6 +43,8 @@ import { CollectionRemittanceAnalysisComponent } from './components/collection-r
 import { LandlordsComponent } from './pages/landlords/landlords.component';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -68,7 +70,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     RemittanceBadDebtsComponent,
     RemittanceAnalysisComponent,
     CollectionRemittanceAnalysisComponent,
-    LandlordsComponent
+    LandlordsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -91,7 +94,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatDatepickerModule,
     MatNativeDateModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    NgApexchartsModule,
+    MatInputModule 
     
   ],
   providers: [
