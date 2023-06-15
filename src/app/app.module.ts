@@ -45,6 +45,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { MatInputModule } from '@angular/material/input';
+import { SystemComponent } from './pages/system/system.component';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { MatInputModule } from '@angular/material/input';
     RemittanceAnalysisComponent,
     CollectionRemittanceAnalysisComponent,
     LandlordsComponent,
+    SystemComponent,
     
   ],
   imports: [

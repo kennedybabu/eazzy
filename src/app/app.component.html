@@ -10,32 +10,32 @@
         <mat-list-item><i class="bi bi-houses-fill mx-1"></i>Properties</mat-list-item>
         <mat-list-item><i class="bi bi-person-vcard mx-1"></i>Residents</mat-list-item>
         <mat-list-item><i class="bi bi-person-lines-fill mx-1"></i>Accounts</mat-list-item>
-        <mat-list-item><i class="bi bi-gear-fill mx-1"></i>System</mat-list-item>
+        <mat-list-item routerLink="system"><i class="bi bi-gear-fill mx-1"></i>System</mat-list-item>
       </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content class="p-4">
-    <p class="mx-5" style="cursor: pointer;font-weight: 600;font-size: 2rem;" (click)="toggleSidenav()"><i class="bi bi-list"></i></p>
+    <p  style="cursor: pointer;font-weight: 600;font-size: 2rem;margin-left: 10px;" (click)="toggleSidenav()"><i class="bi bi-list"></i></p>
     <div class="container">      
         <router-outlet></router-outlet>
     </div>
   </mat-drawer-content>
   
 </mat-drawer-container>
-<div id="error" class="shadow p-3 d-flex error">
+<div *ngIf="successMessage" id="alert" class="shadow p-3 d-flex error">
   <div>
-    <i style="color: rgb(248, 61, 61);" class="bi bi-exclamation-triangle"></i>
+    <i style="color: rgb(248, 61, 61);font-size: larger;" class="bi bi-exclamation-triangle"></i>
   </div>
   <div class="mx-1">
-    <small>{{errorMessage}}</small>
+    <small>{{errorMessage}} Error try again</small>
   </div>
 </div>
 
-<div *ngIf="successMessage" id="error" class="shadow p-3 d-flex success">
+<div *ngIf="successMessage"  id="alert" class="shadow p-3 d-flex success">
   <div>
-    <i style="color: rgb(94, 155, 3);font-size: larger;" class="bi bi-check2"></i>
+    <i style="color: rgb(94, 155, 3);font-size: larger;" class="bi bi-check2-circle"></i>
   </div>
   <div class="mx-1">
-    <small>{{errorMessage}}</small>
+    <small>{{errorMessage}} Operation Successful</small>
   </div>
 </div>
 

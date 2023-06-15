@@ -18,11 +18,15 @@ export class AppComponent  {
     private sharedService: SharedService
     ) {
       this.sharedService.getErrorMessage().subscribe((res) => {
-        this.errorMessage = res
+        this.errorMessage = res 
       })
 
       this.sharedService.getSuccessMessage().subscribe((res) => {
-        this.successMessage = res
+        this.successMessage = res 
+
+        setTimeout(() => {
+          this.successMessage = ''
+        }, 1000)
       })
      } 
 

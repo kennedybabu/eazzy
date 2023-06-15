@@ -1,12 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&display=swap');
-
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;600;800&display=swap');
 
 html, body { height: 100%; }
 body {
     margin: 0; 
-    font-family: 'Montserrat', sans-serif!important; 
+    // font-family: 'Montserrat', sans-serif!important; 
+    font-family: 'Jost', sans-serif;
     background-color: #EEEEEE!important;
+    color: rgb(10, 10, 10);
+
+
+    .dark {
+        color: #0A0A0A;
+    }
 
     .mat-dialog-container {
         display: flex;
@@ -32,7 +39,7 @@ body {
     }
 
 
-    #error {
+    #alert {
         position: absolute;
         top: 2rem;
         width: 300px;
@@ -40,7 +47,10 @@ body {
         left: 2rem;
         z-index: 30000000;
         background-color: #ffffff;
-        animation: easeAlert .7s;
+        animation: easeAlert;
+
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
     }
     
     
@@ -55,7 +65,11 @@ body {
 
     @keyframes easeAlert {
         0% {
-            left: 100px;
+            left: -10rem;
+        }
+
+        60% {
+            left: 5rem;
         }
 
         100% {
