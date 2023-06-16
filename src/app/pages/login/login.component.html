@@ -5,15 +5,16 @@
             <div class="col-5 mx-auto">
                 <form (submit)="onSubmit()" [formGroup]="loginForm">
                     <div class="form-floating mb-3">
-                      <input type="email" style="height: 30px;" formControlName="username" class="form-control" placeholder="username">
-                      <label for="floatingInput">Email address</label> 
+                      <input type="email" id="username" style="height: 30px;" formControlName="username" class="form-control" placeholder="username">
+                      <label for="username">Username</label> 
                       <small style="color: rgb(248, 64, 64);" *ngIf="username?.invalid && username?.touched">provide a username</small>
                     </div>
                     <div class="form-floating">
-                      <input type="password" formControlName="password" class="form-control" placeholder="Password">
-                      <label for="floatingPassword">Password</label>
-                      <small style="color: rgb(248, 64, 64);" *ngIf="password?.invalid && password?.touched">enter password</small>                    </div>
-                    <button [disabled]="loginForm.invalid" class="my-3 p-3">SIGN IN</button>
+                      <input type="password" id="password" formControlName="password" class="form-control" placeholder="Password">
+                      <label for="password">Password</label>
+                      <small style="color: rgb(248, 64, 64);" *ngIf="password?.invalid && password?.touched">enter password</small>                    
+                    </div>
+                    <button [disabled]="loginForm.invalid" class="my-3 p-3 btn btn-primary">SIGN IN</button>
                   </form>
                   <small style="cursor: pointer;">Forgot password?</small>
             </div>         

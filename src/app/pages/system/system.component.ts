@@ -2,8 +2,8 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatDialog } from '@angular/material/dialog';
+import { AddUserComponent } from 'src/app/components/add-user/add-user.component';
 
 
 export interface UserData {
@@ -49,7 +49,8 @@ const NAMES: string[] = [
 @Component({
   selector: 'app-system',
   templateUrl: './system.component.html',
-  styleUrls: ['./system.component.scss']
+  styleUrls: ['./system.component.scss'],
+  providers: [MatDialog]
 })
 export class SystemComponent {
   displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
@@ -60,7 +61,7 @@ export class SystemComponent {
 
   
 
-  constructor(){
+  constructor(private dialog: MatDialog){
     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render
@@ -81,6 +82,17 @@ export class SystemComponent {
     }
   }
 
+
+  openAddUserDialog() {
+    const dialogRef = this.dialog.open(AddUserComponent, {
+      minHeight: 'auto', width: '80%'
+    }) 
+
+    dialogRef.afterClosed().subscribe(result => {
+
+    }) 
+  }
+
 }
 
 function createNewUser(id: number): UserData {
@@ -96,8 +108,5 @@ function createNewUser(id: number): UserData {
     progress: Math.round(Math.random() * 100).toString(),
     fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
   };
-
-
-
   
 }

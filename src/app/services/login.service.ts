@@ -16,7 +16,7 @@ export class LoginService {
     }
     this.http.post('http://109.123.254.230:8500/accounts/token/', jsonObject).subscribe((response) => {
       console.log(response)
-      if(response === 702) {
+      if(response) {
       } else {
         this.sharedService.sendErrorMessage('something went wrong')
       }

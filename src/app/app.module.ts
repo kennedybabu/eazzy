@@ -46,6 +46,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { MatInputModule } from '@angular/material/input';
 import { SystemComponent } from './pages/system/system.component';
+import { AddUserComponent } from './components/add-user/add-user.component';
 
 
 @NgModule({
@@ -73,6 +74,7 @@ import { SystemComponent } from './pages/system/system.component';
     CollectionRemittanceAnalysisComponent,
     LandlordsComponent,
     SystemComponent,
+    AddUserComponent,
     
   ],
   imports: [
@@ -98,7 +100,7 @@ import { SystemComponent } from './pages/system/system.component';
     MatPaginatorModule,
     MatTableModule,
     NgApexchartsModule,
-    MatInputModule 
+    MatInputModule ,
     
   ],
   providers: [
