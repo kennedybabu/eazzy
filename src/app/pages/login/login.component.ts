@@ -18,7 +18,7 @@ export class LoginComponent  {
 
   onSubmit(){
     this.loginService.loginUser(this.loginForm.value)
-    this.loginForm.reset()
+    // this.loginForm.reset()
   }
 
 

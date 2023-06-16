@@ -29,12 +29,23 @@ export class LoginService {
         let objectString = JSON.stringify(userToken)
         const encryptedOject = CryptoJS.AES.encrypt(objectString, KEY).toString()
         localStorage.setItem('pgKuxUJwTs', encryptedOject)
-        
+
         this.sharedService.sendSuccessMessage('logged in successful')
         this.router.navigate(['/'])
       } else {
         this.sharedService.sendErrorMessage('something went wrong')
       }
     })
+  }
+
+
+  isAuthenticated() {
+    const encryptedObject = localStorage.getItem('pgKuxUJwTs')
+
+    if(encryptedObject) {
+      return true
+    } else {
+      return false
+    }
   }
 }
