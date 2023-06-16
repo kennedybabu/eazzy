@@ -18,10 +18,12 @@ export class LoginService {
     private router:Router) { } 
 
   loginUser(formValue: any){
+
     let jsonObject = {
       "username": formValue.username,
       "password": formValue.password
     }
+
     this.http.post('http://109.123.254.230:8500/accounts/token/', jsonObject).subscribe((response:any) => {
       console.log(response)
       if(response.refresh) {
@@ -32,7 +34,7 @@ export class LoginService {
 
         this.sharedService.sendSuccessMessage('logged in successful')
         this.router.navigate(['/'])
-      } else {
+      } if(response.status === 401) {
         this.sharedService.sendErrorMessage('something went wrong')
       }
     })
