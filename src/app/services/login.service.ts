@@ -1,22 +1,37 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SharedService } from './shared.service';
+import { Route, Router } from '@angular/router';
+import * as CryptoJS from 'crypto-js';
+import { KEY } from '../config/key';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private http: HttpClient, private sharedService: SharedService) { } 
+  constructor(
+    private http: HttpClient, 
+    private sharedService: SharedService,
+    private router:Router) { } 
 
   loginUser(formValue: any){
     let jsonObject = {
       "username": formValue.username,
       "password": formValue.password
     }
-    this.http.post('http://109.123.254.230:8500/accounts/token/', jsonObject).subscribe((response) => {
+    this.http.post('http://109.123.254.230:8500/accounts/token/', jsonObject).subscribe((response:any) => {
       console.log(response)
-      if(response) {
+      if(response.refresh) {
+        let userToken = {'access':response.access, 'refresh': response.refresh}
+        let objectString = JSON.stringify(userToken)
+        const encryptedOject = CryptoJS.AES.encrypt(objectString, KEY).toString()
+        localStorage.setItem('pgKuxUJwTs', encryptedOject)
+        
+        this.sharedService.sendSuccessMessage('logged in successful')
+        this.router.navigate(['/'])
       } else {
         this.sharedService.sendErrorMessage('something went wrong')
       }

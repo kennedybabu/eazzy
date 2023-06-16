@@ -1,0 +1,1 @@
+export const KEY="VpJMA19MeE"

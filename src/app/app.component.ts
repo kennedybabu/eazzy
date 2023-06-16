@@ -26,7 +26,7 @@ export class AppComponent  {
 
         setTimeout(() => {
           this.successMessage = ''
-        }, 1000)
+        }, 2000)
       })
      } 
 
