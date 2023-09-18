@@ -4,13 +4,14 @@
 <mat-drawer-container style="position: relative;" class="wrapper">
   <mat-drawer mode="over" [opened]="isOpen" style="width:350px;padding-top: 3rem;">
     <p (click)="toggleSidenav()" style="font-weight: 600;font-size: 1.5rem;position: absolute;top: 2rem;right:2rem;cursor: pointer;"><i class="bi bi-x-lg"></i></p>
-      <h2 class="m-3" routerLink="/" style="cursor: pointer;">eazzyrent</h2>
+      <h2 class="m-3" routerLink="/" style="cursor: pointer;border: none;outline: none;">eazzyrent</h2>
       <mat-nav-list>
         <mat-list-item routerLink="landlords"><i class="bi bi-people-fill mx-1"></i>Landlords</mat-list-item>
         <mat-list-item><i class="bi bi-houses-fill mx-1"></i>Properties</mat-list-item>
         <mat-list-item><i class="bi bi-person-vcard mx-1"></i>Residents</mat-list-item>
         <mat-list-item><i class="bi bi-person-lines-fill mx-1"></i>Accounts</mat-list-item>
         <mat-list-item routerLink="system"><i class="bi bi-gear-fill mx-1"></i>System</mat-list-item>
+        <mat-list-item (click)="logOut()"><i class="bi bi-box-arrow-left mx-1"></i>Logout</mat-list-item>
       </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content class="p-4">

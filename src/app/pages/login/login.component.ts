@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -18,9 +18,7 @@ export class LoginComponent  {
 
   onSubmit(){
     this.loginService.loginUser(this.loginForm.value)
-    // this.loginForm.reset()
   }
-
 
   get username(){
     return this.loginForm.get('username')

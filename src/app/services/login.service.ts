@@ -34,9 +34,15 @@ export class LoginService {
 
         this.sharedService.sendSuccessMessage('logged in successful')
         this.router.navigate(['/'])
-      } if(response.status === 401) {
-        this.sharedService.sendErrorMessage('something went wrong')
+      }if(response.status === 0){
+        this.sharedService.sendErrorMessage('error')
+        console.log(response.ok)
       }
+    }, (error:any) => {
+      this.sharedService.sendErrorMessage(error.error.detail)
+      setTimeout(() => {
+        this.sharedService.sendErrorMessage('')
+      }, 3000)
     })
   }
 
@@ -50,4 +56,5 @@ export class LoginService {
       return false
     }
   }
+
 }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { LoaderService } from './services/loader.service';
 import { SharedService } from './services/shared.service';
+import { LoginService } from './services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +17,8 @@ export class AppComponent  {
 
 
   constructor(public loaderService: LoaderService,     
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private router: Router
     ) {
       this.sharedService.getErrorMessage().subscribe((res) => {
         this.errorMessage = res 
@@ -26,7 +29,7 @@ export class AppComponent  {
 
         setTimeout(() => {
           this.successMessage = ''
-        }, 2000)
+        }, 3000)
       })
      } 
 
@@ -34,5 +37,11 @@ export class AppComponent  {
 
   toggleSidenav(){
     this.isOpen = !this.isOpen
+  }
+
+
+  logOut(){
+    localStorage.removeItem('pgKuxUJwTs')
+    this.router.navigate(['login'])
   }
 }
